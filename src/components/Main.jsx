@@ -5,7 +5,6 @@ export default function Main() {
   return (
     <div>
       <Header />
-      <h1>heo</h1>
     </div>
   );
 }
