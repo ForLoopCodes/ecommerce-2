@@ -3,7 +3,16 @@ import React from "react";
 export default function Header(props) {
   return (
     <div className="header">
-      <button className="button1">
+      <button
+        className="button1"
+        style={{
+          pointerEvents: props.title === "Home" ? "none" : "auto",
+          transform: props.title === "Home" ? "scale(0)" : "scale(1)",
+        }}
+        onClick={() => {
+          window.location.href = props.backLink;
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -18,7 +27,13 @@ export default function Header(props) {
           />
         </svg>
       </button>
-      <button className="button2">
+      <h1 className="title">{props.title}</h1>
+      <button
+        className="button2"
+        onClick={() => {
+          window.location.href = "/cart";
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
